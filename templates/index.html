@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Bingo</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎰 Bingo Royale</h1>
+            <div class="game-info">
+                <span id="gameStatus">Create New Game</span>
+                <span id="playerCount">0 players</span>
+            </div>
+        </header>
 
+        <div class="game-section">
+            <!-- Game Code Input -->
+            <div class="game-code-section" id="gameCodeSection">
+                <input type="text" id="gameCode" placeholder="Enter Game ID" maxlength="36">
+                <button id="joinBtn">Join Game</button>
+                <button id="createBtn">Create Game</button>
+            </div>
+
+            <!-- Bingo Grid -->
+            <div class="bingo-grid" id="bingoGrid">
+                <div class="grid-header">
+                    <span>B</span><span>I</span><span>N</span><span>G</span><span>O</span>
+                </div>
+                <div class="grid-cells" id="gridCells"></div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls" id="controls" style="display: none;">
+                <button id="newRoundBtn" class="btn-primary">New Round</button>
+                <button id="callBtn" class="btn-secondary">Call Number</button>
+                <input type="number" id="callNumber" min="1" max="75" placeholder="1-75">
+            </div>
+
+            <!-- Called Numbers -->
+            <div class="called-numbers" id="calledNumbers">
+                <h3>Called Numbers</h3>
+                <div id="numbersList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+  </html>
