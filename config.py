@@ -1,4 +1,8 @@
-aiogram==3.4.1
-Flask==3.0.0
-python-dotenv==1.0.0
-redis==5.0.1
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+WEBHOOK_URL = os.getenv('WEBHOOK_URL', 'https://your-domain.com/webhook')
+REDIS_URL = os.getenv('REDIS_URL', 'redis://localhost:6379')
